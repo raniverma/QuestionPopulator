@@ -1,5 +1,6 @@
 package com.stackroute.service;
 import com.stackroute.domain.Questions;
+import com.stackroute.exceptions.QuestionAlreadyExistsException;
 import com.stackroute.repository.QuestionRepository;
 import org.junit.Before;
 import org.junit.Test;

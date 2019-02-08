@@ -14,8 +14,8 @@ public class QuestionServiceImpl implements QuestionService {
     private QuestionRepository questionRepository;
 
     @Override
-    public Questions saveQuestion(Questions question) throws QuestionAlreadyExistsException {
-        //  System.out.println(question);
+    public Questions saveQuestion(Questions question) {
+          System.out.println(question);
         MongoClient mongoClient = new MongoClient( "localhost" , 27017 );
         DB db = mongoClient.getDB("admin");
         DBCollection collection = db.getCollection("counters");
@@ -23,9 +23,9 @@ public class QuestionServiceImpl implements QuestionService {
         document.put("_id", getNextSequence("questionId"));
         collection.insert(document);
         question.setQuestionId((double)document.get("_id")+1.0);
-        if(questionRepository.existsById((int)question.getQuestionId())) {
-            throw new QuestionAlreadyExistsException("This Question already exists");
-        }
+       // if(questionRepository.existsById((int)question.getQuestionId())) {
+        //    throw new QuestionAlreadyExistsException("This Question already exists");
+       // }
         Questions question1 = questionRepository.save(question);
         return question1;
     }
