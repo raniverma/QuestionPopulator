@@ -42,7 +42,7 @@ public class QuestionServiceImplTest {
     }
 
     @Test
-    public void testSaveMusicSuccess(){
+    public void testSaveMusicSuccess() throws QuestionAlreadyExistsException {
 
         when(questionRepository.save(question)).thenReturn(question);
         Questions questions= musicServiceImpl.saveQuestion(question);

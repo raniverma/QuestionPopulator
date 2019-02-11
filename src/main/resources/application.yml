@@ -3,6 +3,6 @@ server:
 spring:
     data:
         mongodb:
-            database: admin5
+            database: admin
             host: localhost
             port: 27017
