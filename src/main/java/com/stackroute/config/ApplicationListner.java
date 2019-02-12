@@ -26,6 +26,8 @@ public class ApplicationListner implements ApplicationListener<ApplicationReadyE
      }
 
     public void seedData(){
+        questionRepository.delete(new Questions(0,"Awesome" ,"Question1","Beginner","java","url"));
+        questionRepository.delete(new Questions(1,"Awesome1" ,"Question2","Intermediate","java","url"));
         questionRepository.save(new Questions(0,"Awesome" ,"Question1","Beginner","java","url"));
         questionRepository.save(new Questions(1,"Awesome1" ,"Question2","Intermediate","java","url"));
     }

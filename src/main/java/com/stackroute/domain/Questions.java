@@ -12,7 +12,7 @@ import org.springframework.data.annotation.Id;
 @Builder
 public class Questions{
     @Id
-    public double questionId;
+    public int questionId;
     @Field
     private String questionTitle;
     @Field
@@ -28,7 +28,7 @@ public class Questions{
         return questionId;
     }
 
-    public void setQuestionId(double questionId) {
+    public void setQuestionId(int questionId) {
         this.questionId = questionId;
     }
 }
