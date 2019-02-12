@@ -3,6 +3,6 @@ server:
 spring:
     data:
         mongodb:
-            database: admin11
+            database: mashup
             host: localhost
             port: 27017

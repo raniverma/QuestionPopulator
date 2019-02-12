@@ -1,7 +1,9 @@
 package com.stackroute.config;
 
 
+import com.stackroute.domain.Counters;
 import com.stackroute.domain.Questions;
+import com.stackroute.repository.CounterRepository;
 import com.stackroute.repository.QuestionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -13,10 +15,13 @@ public class ApplicationListner implements ApplicationListener<ApplicationReadyE
 
     //    @Autowired
     private QuestionRepository questionRepository;
+    private CounterRepository counterRepository;
+
 
     @Autowired
-    public ApplicationListner(QuestionRepository questionRepository) {
+    public ApplicationListner(QuestionRepository questionRepository, CounterRepository counterRepository) {
         this.questionRepository = questionRepository;
+        this.counterRepository = counterRepository;
     }
 
 
@@ -26,8 +31,12 @@ public class ApplicationListner implements ApplicationListener<ApplicationReadyE
      }
 
     public void seedData(){
-        questionRepository.delete(new Questions(0,"Awesome" ,"Question1","Beginner","java","url"));
-        questionRepository.delete(new Questions(1,"Awesome1" ,"Question2","Intermediate","java","url"));
+        //counterRepository.delete(new Counters("questionId",3));
+        counterRepository.deleteAll();
+        counterRepository.save(new Counters("questionId",3));
+        questionRepository.deleteAll();
+    //    questionRepository.delete(new Questions(0,"Awesome" ,"Question1","Beginner","java","url"));
+      //  questionRepository.delete(new Questions(1,"Awesome1" ,"Question2","Intermediate","java","url"));
         questionRepository.save(new Questions(0,"Awesome" ,"Question1","Beginner","java","url"));
         questionRepository.save(new Questions(1,"Awesome1" ,"Question2","Intermediate","java","url"));
     }
