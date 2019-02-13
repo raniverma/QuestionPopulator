@@ -37,7 +37,7 @@ public class QuestionServiceImplTest {
     public void setUp() {
 
         MockitoAnnotations.initMocks(this);
-        question = new Questions(0,"Awesome" ,"Question1","Beginner","java","url");
+        question = new Questions(0,"Awesome" ,"Question1","input Format","output Format","Beginner","java","url");
         options = Optional.of(question);
     }
 

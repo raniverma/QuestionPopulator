@@ -18,6 +18,10 @@ public class Questions{
     @Field
     private String  questionDescription;
     @Field
+    private String  inputFormat;
+    @Field
+    private String outputFormat;
+    @Field
     private String difficulty;
     @Field
     private String tags;

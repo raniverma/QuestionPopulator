@@ -44,7 +44,7 @@ public class QuestionControllerTest {
     @Before
     public void setUp()throws Exception{
         mockMvc = MockMvcBuilders.standaloneSetup(questionController).build();
-        question=new Questions(11,"Awesome" ,"Question1","Beginner","java","url");
+        question=new Questions(11,"Awesome" ,"Question1","input Format","output Format","Beginner","java","url");
         MockitoAnnotations.initMocks(this);
     }
 

@@ -34,8 +34,8 @@ public class QuestionController {
             catch(QuestionAlreadyExistsException ex){
                 return new ResponseEntity<>(ex.getMessage(), HttpStatus.CONFLICT);
             }
-//            catch (Exception exception) {
-//                return new ResponseEntity<>(exception.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-//            }
+            catch (Exception exception) {
+                return new ResponseEntity<>(exception.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+            }
     }
 }
